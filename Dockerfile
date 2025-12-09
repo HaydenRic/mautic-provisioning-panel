@@ -8,10 +8,6 @@ COPY package*.json ./
 COPY . .
 RUN npm ci
 
-# Set dummy DATABASE_URL for build
-ENV DATABASE_URL="file:./dev.db"
-ENV NEXT_TELEMETRY_DISABLED=1
-
 # Generate Prisma client and build
 RUN npx prisma generate
 RUN npm run build

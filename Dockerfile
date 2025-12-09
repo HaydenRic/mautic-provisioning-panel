@@ -7,6 +7,7 @@ RUN npm ci
 
 COPY . .
 
+ENV DATABASE_URL="file:./dev.db"
 RUN npx prisma generate
 RUN npm run build
 
